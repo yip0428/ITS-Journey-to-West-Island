@@ -9,6 +9,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Press+Start+2P&family=Protest+Guerrilla&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+
+.map-pin {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 0; /* Hide the emoji text */
+    color: transparent; /* Ensure no text is visible */
+    width: clamp(24px, 5vw, 44px); /* Responsive hit area */
+    height: clamp(24px, 5vw, 44px);
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 50;
+    transform: translate(-50%, 0%); /* Restored original offset */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Kill the inline filters (shadows/hue-rotate) from HTML */
+    filter: none !important;
+    box-shadow: none;
+}
+
+.map-pin::after {
+    content: '';
+    position: absolute;
+    width: clamp(14px, 3vw, 28px); /* Responsive glow */
+    height: clamp(14px, 3vw, 28px);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    animation: pin-pulse 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+    box-shadow: 0 0 clamp(4px, 1vw, 10px) rgba(255,255,255,0.4);
+}
+
+@keyframes pin-pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+.map-pin:hover {
+    transform: translate(-50%, 0%) scale(1.3);
+}
+
+.map-pin:hover::after {
+    animation-duration: 1s;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(163,216,229,0) 75%); /* Slight blue tint on hover */
+    opacity: 1;
+}
+</style>
 <body class="detail-page">
     <audio id="bgm-player" loop autoplay playsinline preload="auto">
         <source src="src/audio_bgm.wav" type="audio/wav">
@@ -20,7 +85,8 @@
                 data-title="奧運徑 Olympic Trail" 
                 data-chinese_context="全長5.6公里，連接東涌及梅窩。此徑以2008年北京奧運命名。難度中等，適合喜歡遠足、有較大兒童的家庭。路徑穿過綠野、農田及天然灌木林。" 
                 data-eng_context="A 5.6km path connecting Tung Chung and Mui Wo. The trail is named after the 2008 Beijing Olympics. It is of moderate difficulty, making it suitable for families with older children who enjoy hiking. The trail passes through greenery, farms, and natural bushland."
-                data-img="">
+                data-img=""
+                data-qr-code="src/image/qr code/奧運徑.png">
                 📍
             </button>
 
@@ -29,7 +95,8 @@
                 data-title="梅窩徑觀景台 Mui Wo Trail View Point 1" 
                 data-chinese_context="奧運徑上的第一個風景觀景台。可飽覽梅窩、銀礦灣及周邊山巒的美景。適合短暫休息及拍照的好地方。" 
                 data-eng_context="The first scenic viewpoint along the Olympic Trail. Offers beautiful views of Mui Wo, Silvermine Bay, and the surrounding mountains. A great spot for a short rest and photos."
-                data-img="">
+                data-img=""
+                data-qr-code="src/image/qr code/觀景台1.png">
                 📍
             </button>
 
@@ -38,7 +105,8 @@
                 data-title="銀龍瀑布 Pearl Waterfall" 
                 data-chinese_context="路徑上的風景瀑布。水流沿岩石傾瀉而下，匯成小水潭。在天氣炎熱時特別清涼舒爽。水量取決於近期降雨量。" 
                 data-eng_context="A scenic waterfall along the trail. The water cascades down rocks into a small pool. A refreshing spot, especially on hot days. The flow depends on recent rainfall."
-                data-img="src/image/TaiO/Waterfall.png">
+                data-img="src/image/TaiO/Waterfall.png"
+                data-qr-code="src/image/qr code/銀龍瀑布.png">
                 📍
             </button>
 
@@ -47,7 +115,8 @@
                 data-title="銀礦洞 Silver Mine Cave" 
                 data-chinese_context="具有歷史意義的遺址，曾是銀礦所在地。目前洞口已封閉，但遊客仍可參觀其外圍。這是一個充滿歷史神秘感的地方，展示了大嶼山過去的採礦活動。" 
                 data-eng_context="A historical site that was once a silver mine. While the cave entrance is now sealed for safety, visitors can still view the area. It offers a glimpse into Lantau's past mining activities and holds historical significance."
-                data-img="">
+                data-img=""
+                data-qr-code="src/image/qr code/礦洞.png">
                 📍
             </button>
 
@@ -56,7 +125,8 @@
                 data-title="銀礦瀑布 Silvermine Waterfall" 
                 data-chinese_context="銀礦灣地區的主要瀑布。水流從寬闊的岩石面傾瀉而下，落入下方水潭。重要提示：瀑布水量完全取決於近期降雨量。如果久未下雨，瀑布可能會相當乾涸。出發前請查看天氣情況。" 
                 data-eng_context="The main waterfall in the Silvermine area. The water flows over a wide rock face into a pool below. Important: The waterfall's flow depends entirely on recent rainfall. If there hasn't been much rain, the waterfall may be quite dry. Check weather conditions before visiting."
-                data-img="">
+                data-img=""
+                data-qr-code="src/image/qr code/銀礦瀑布.png">
                 📍
             </button>
 
@@ -65,7 +135,8 @@
                 data-title="梅窩碼頭 Mui Wo Ferry Pier" 
                 data-chinese_context="進入梅窩的主要入口。中環6號碼頭有定期渡輪前往梅窩。普通渡輪航程約50至60分鐘，高速船約35至40分鐘。" 
                 data-eng_context="The main entry point to Mui Wo. Ferries run regularly from Central Pier No. 6 to Mui Wo. The journey takes approximately 50-60 minutes on ordinary ferries and 35-40 minutes on high-speed ferries."
-                data-img="src/image/TaiO/FerryPier.png">
+                data-img="src/image/TaiO/FerryPier.png"
+                data-qr-code="src/image/qr code/梅窩碼頭.png">
                 📍
             </button>
 
@@ -74,7 +145,8 @@
                 data-title="東涌達東路巴士總站 Tung Chung Tat Tung Road Bus Terminus" 
                 data-chinese_context="東涌的主要巴士樞紐。從這裡可以搭乘新大嶼山巴士23號線前往昂坪。巴士車程約101分鐘，沿途經過風景優美的山路。" 
                 data-eng_context="The main bus hub in Tung Chung. From here, you can take NLB Bus No. 23 to Ngong Ping. The bus journey takes about 101 minutes and passes through scenic mountain roads."
-                data-img="src/image/TaiO/Bus_terminal.png">
+                data-img="src/image/TaiO/Bus_terminal.png"
+                data-qr-code="src/image/qr code/東涌達東路巴士總站.png">
                 📍
             </button>
         </main>
@@ -102,6 +174,11 @@
                     <p id="modal-eng-context"></p>
                     <div class="modal-image-container">
                         <img id="modal-location-img" src="" alt="Location Image" style="width: 100%; border-radius: 5px; border: 3px solid #3b6b98; display: none;">
+                    </div>
+                    <!-- QR Code Container -->
+                    <div id="modal-qr-container" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; display: none;">
+                        <span style="font-size: 0.9rem; color: #2b396b; font-family: 'Press Start 2P', cursive;">SCAN FOR INFO</span>
+                        <img id="modal-qr-img" src="" alt="QR Code" style="width: 150px; height: 150px; border: 2px solid #3b6b98; border-radius: 5px; background: white; padding: 5px;">
                     </div>
                 </div>
                 <img src="src/image/monkey.png" alt="Monkey" class="monkey-img">

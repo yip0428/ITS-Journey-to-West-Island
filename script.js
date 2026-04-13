@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- BGM Logic ---
+    const audio = document.getElementById('bgm-player');
+    
+    const attemptPlay = () => {
+        if (!audio) return;
+        audio.play().catch(() => {
+            // Auto-play might be blocked, wait for user interaction
+        });
+    };
+
     // --- Index Page Logic ---
     const welcomeScreen = document.getElementById('welcome-screen');
     const cover2Screen = document.getElementById('cover2-screen');
@@ -7,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (welcomeScreen && mapScreen) {
         const clickHere = document.querySelector('.click-here');
         const params = new URLSearchParams(window.location.search);
+        const welcomeSeen = sessionStorage.getItem('welcomeSeen') === 'true';
 
         const showMainScreen = () => {
             if (cover2Screen) {
@@ -15,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             mapScreen.classList.remove('hidden');
             mapScreen.classList.add('active');
+            sessionStorage.setItem('welcomeSeen', 'true');
         };
 
         const showCover2 = () => {
@@ -32,14 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 450);
         };
 
-        if(clickHere) {
-            clickHere.addEventListener('click', (e) => {
-                e.preventDefault();
-                showCover2();
-            });
-        }
-
-        if (params.get('view') === 'main') {
+        if (welcomeSeen || params.get('view') === 'main') {
+            // Skip welcome animation
             welcomeScreen.classList.remove('active');
             welcomeScreen.classList.add('hidden');
             if (cover2Screen) {
@@ -48,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             mapScreen.classList.remove('hidden');
             mapScreen.classList.add('active');
+        } else {
+            // Show welcome normally
+            if (clickHere) {
+                clickHere.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showCover2();
+                });
+            }
         }
 
         const mapBtn = document.querySelector('.map-btn');
@@ -127,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalChinese = document.getElementById('modal-chinese-context');
         const modalEng = document.getElementById('modal-eng-context');
         const modalImg = document.getElementById('modal-location-img');
+        const modalQrContainer = document.getElementById('modal-qr-container');
+        const modalQrImg = document.getElementById('modal-qr-img');
         const closeBtn = document.querySelector('.close-btn');
 
         mapPins.forEach(pin => {
@@ -141,6 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalImg.style.display = 'block';
                 } else {
                     modalImg.style.display = 'none';
+                }
+
+                const qrSrc = pin.getAttribute('data-qr-code');
+                if (qrSrc && qrSrc.trim() !== '') {
+                    modalQrImg.src = qrSrc;
+                    modalQrContainer.style.display = 'flex';
+                } else {
+                    modalQrContainer.style.display = 'none';
                 }
                 
                 modal.classList.remove('hidden');
