@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail Map - Lantau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Press+Start+2P&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+    <audio id="bgm-player" loop autoplay playsinline preload="auto">
+        <source src="src/audio_bgm.wav" type="audio/wav">
+    </audio>
+    <div class="main-wrapper trail-view">
+        <main class="content map-container">
+            <!-- Olympic Trail (Green) -->
+            <button class="map-pin" style="top: 7.7%; left: 50.5%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="奧運徑 Olympic Trail" 
+                data-chinese_context="全長5.6公里，連接東涌及梅窩。此徑以2008年北京奧運命名。難度中等，適合喜歡遠足、有較大兒童的家庭。路徑穿過綠野、農田及天然灌木林。" 
+                data-eng_context="A 5.6km path connecting Tung Chung and Mui Wo. The trail is named after the 2008 Beijing Olympics. It is of moderate difficulty, making it suitable for families with older children who enjoy hiking. The trail passes through greenery, farms, and natural bushland."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Mui Wo Trail View Point 1 (Green) -->
+            <button class="map-pin" style="top: 35.5%; left: 67.3%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="梅窩徑觀景台 Mui Wo Trail View Point 1" 
+                data-chinese_context="奧運徑上的第一個風景觀景台。可飽覽梅窩、銀礦灣及周邊山巒的美景。適合短暫休息及拍照的好地方。" 
+                data-eng_context="The first scenic viewpoint along the Olympic Trail. Offers beautiful views of Mui Wo, Silvermine Bay, and the surrounding mountains. A great spot for a short rest and photos."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Pearl Waterfall (Green) -->
+            <button class="map-pin" style="top: 62.5%; left: 76.4%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="銀龍瀑布 Pearl Waterfall" 
+                data-chinese_context="路徑上的風景瀑布。水流沿岩石傾瀉而下，匯成小水潭。在天氣炎熱時特別清涼舒爽。水量取決於近期降雨量。" 
+                data-eng_context="A scenic waterfall along the trail. The water cascades down rocks into a small pool. A refreshing spot, especially on hot days. The flow depends on recent rainfall."
+                data-img="src/image/TaiO/Waterfall.png">
+                📍
+            </button>
+
+            <!-- Silver Mine Cave (Green) -->
+            <button class="map-pin" style="top: 70.3%; left: 78.8%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="銀礦洞 Silver Mine Cave" 
+                data-chinese_context="具有歷史意義的遺址，曾是銀礦所在地。目前洞口已封閉，但遊客仍可參觀其外圍。這是一個充滿歷史神秘感的地方，展示了大嶼山過去的採礦活動。" 
+                data-eng_context="A historical site that was once a silver mine. While the cave entrance is now sealed for safety, visitors can still view the area. It offers a glimpse into Lantau's past mining activities and holds historical significance."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Silvermine Waterfall (Green) -->
+            <button class="map-pin" style="top: 70.3%; left: 80.5%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="銀礦瀑布 Silvermine Waterfall" 
+                data-chinese_context="銀礦灣地區的主要瀑布。水流從寬闊的岩石面傾瀉而下，落入下方水潭。重要提示：瀑布水量完全取決於近期降雨量。如果久未下雨，瀑布可能會相當乾涸。出發前請查看天氣情況。" 
+                data-eng_context="The main waterfall in the Silvermine area. The water flows over a wide rock face into a pool below. Important: The waterfall's flow depends entirely on recent rainfall. If there hasn't been much rain, the waterfall may be quite dry. Check weather conditions before visiting."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Mui Wo Ferry Pier (Orange) -->
+            <button class="map-pin" style="top: 86.3%; left: 85%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(30deg);" 
+                data-title="梅窩碼頭 Mui Wo Ferry Pier" 
+                data-chinese_context="進入梅窩的主要入口。中環6號碼頭有定期渡輪前往梅窩。普通渡輪航程約50至60分鐘，高速船約35至40分鐘。" 
+                data-eng_context="The main entry point to Mui Wo. Ferries run regularly from Central Pier No. 6 to Mui Wo. The journey takes approximately 50-60 minutes on ordinary ferries and 35-40 minutes on high-speed ferries."
+                data-img="src/image/TaiO/FerryPier.png">
+                📍
+            </button>
+
+            <!-- Tung Chung Tat Tung Road Bus Terminus (Orange) -->
+            <button class="map-pin" style="top: 24.3%; left: 8.3%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(30deg);" 
+                data-title="東涌達東路巴士總站 Tung Chung Tat Tung Road Bus Terminus" 
+                data-chinese_context="東涌的主要巴士樞紐。從這裡可以搭乘新大嶼山巴士23號線前往昂坪。巴士車程約101分鐘，沿途經過風景優美的山路。" 
+                data-eng_context="The main bus hub in Tung Chung. From here, you can take NLB Bus No. 23 to Ngong Ping. The bus journey takes about 101 minutes and passes through scenic mountain roads."
+                data-img="src/image/TaiO/Bus_terminal.png">
+                📍
+            </button>
+        </main>
+        
+        <!-- Navigation Controls -->
+        <div class="bottom-controls">
+            <button class="nav-btn prev-btn">&lt;</button>
+            <button class="nav-btn next-btn">&gt;</button>
+            <a href="index.html?view=main" class="banner-ribbon back-btn" style="text-decoration: none;">BACK TO MAIN</a>
+        </div>
+        
+        <!-- Popup Modal -->
+        <div id="info-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="modal-title">Title</span>
+                    <div class="modal-controls">
+                        <span>_</span>
+                        <span>□</span>
+                        <span class="close-btn">×</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-chinese-context"></p>
+                    <p id="modal-eng-context"></p>
+                    <div class="modal-image-container">
+                        <img id="modal-location-img" src="" alt="Location Image" style="width: 100%; border-radius: 5px; border: 3px solid #3b6b98; display: none;">
+                    </div>
+                </div>
+                <img src="src/image/monkey.png" alt="Monkey" class="monkey-img">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Route - Lantau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+    <audio id="bgm-player" loop autoplay playsinline preload="auto">
+        <source src="src/audio_bgm.wav" type="audio/wav">
+    </audio>
+    <div class="main-wrapper suggested-route-view">
+        <div class="route-container">
+            <header class="route-header">
+                <div class="route-logo-wrapper">
+                    <div class="route-logo-inner">
+                        <img src="src/image/Cloud.png" alt="Cloud" class="route-logo-cloud">
+                        <h1 class="route-logo-text">
+                            Suggested<br>Route
+                        </h1>
+                    </div>
+                </div>
+                
+                <div class="day-buttons">
+                    <a href="#" class="day-btn" id="day1-btn">DAY 1</a>
+                    <a href="#" class="day-btn" id="day2-btn">DAY 2</a>
+                </div>
+            </header>
+
+            <main class="route-display">
+                <img id="route-img" src="src/image/Route/Day1.jpg" alt="Route Map" class="route-map-img">
+            </main>
+
+            <div class="bottom-right-controls">
+                <a href="index.html?view=main" class="back-blue-btn">BACK</a>
+            </div>
+        </div>
+
+        <!-- Image Modal for Suggested Route -->
+        <div id="image-modal" class="modal hidden">
+            <div class="modal-content" style="height: auto; max-height: 90vh;">
+                <div class="modal-header">
+                    <span id="image-modal-title">Suggested Route Map</span>
+                    <div class="modal-controls">
+                        <span>_</span>
+                        <span>□</span>
+                        <span class="image-close-btn" style="cursor: pointer;">×</span>
+                    </div>
+                </div>
+                <div class="modal-body" style="padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img id="modal-large-img" src="" alt="Large Route Map" style="max-width: 100%; max-height: 80vh; border-radius: 5px; border: 3px solid #3b6b98;">
+                </div>
+                <img src="src/image/monkey.png" alt="Monkey" class="monkey-img">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

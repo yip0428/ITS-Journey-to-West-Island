@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Map - Lantau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Press+Start+2P&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+    <audio id="bgm-player" loop autoplay playsinline preload="auto">
+        <source src="src/audio_bgm.wav" type="audio/wav">
+    </audio>
+    <div class="main-wrapper detail-view">
+        <main class="content map-container">
+            <!-- Ebeneezer's Kebabs & Pizzeria (Pink) -->
+            <button class="map-pin" style="top: 39%; left: 43.8%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(330deg);" 
+                data-title="Ebeneezer's Kebabs & Pizzeria" 
+                data-chinese_context="位於昂坪市集9A號舖。清真認證的印度及中東餐廳。提供優質素食選擇，包括咖喱角、印式芝士、鷹嘴豆泥球及烤餅。營業時間：每日10:00-18:00。昂坪唯一清真認證餐廳。" 
+                data-eng_context="Located in Shop 9A, Ngong Ping Village. Halal-certified Indian and Middle Eastern restaurant. Offers excellent vegetarian options including samosas, paneer subzi, falafel, and rotis. Operating hours: 10:00-18:00 daily. The only halal restaurant in Ngong Ping."
+                data-img="src/image/TaiO/Ebeneezer.png">
+                📍
+            </button>
+
+            <!-- Cheung Kee Open-air Cafe (Purple) -->
+            <button class="map-pin" style="top: 49.3%; left: 54.4%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(280deg);" 
+                data-title="章記露天茶座 Cheung Kee Open-air Cafe" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/Cheung_Kee.png">
+                📍
+            </button>
+
+            <!-- Douhua (Pink) -->
+            <button class="map-pin" style="top: 52.3%; left: 58.7%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(330deg);" 
+                data-title="泳樺屋山水石磨豆腐花 Douhua (Tofu Pudding)" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/Douhua.png">
+                📍
+            </button>
+
+            <!-- Ngong Ping 360 Cable Car (Red) -->
+            <button class="map-pin" style="top: 15.5%; left: 81.3%;" 
+                data-title="昂坪360纜車站 Ngong Ping 360 Cable Car Terminal" 
+                data-chinese_context="電動纜車，零直接排放。全程5.7公里，車程24至30分鐘，每小時可載3,500名乘客。可選擇標準車廂或水晶車廂（透明玻璃底）。開放時間：平日10:00-18:00，週末09:00-18:30。" 
+                data-eng_context="An electric-powered cable car with zero direct emissions. The 5.7km journey takes 24-30 minutes and can carry 3,500 passengers per hour. Choose between standard or crystal cabins (with glass floors). Operating hours: Weekdays 10:00-18:00, Weekends 09:00-18:30."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Tung Chung Tat Tung Road Bus Terminus (Red) -->
+            <button class="map-pin" style="top: 23.3%; left: 87.7%;" 
+                data-title="東涌達東路巴士總站 Tung Chung Tat Tung Road Bus Terminus" 
+                data-chinese_context="東涌的主要巴士樞紐。從這裡可以搭乘新大嶼山巴士23號線前往昂坪。巴士車程約101分鐘，沿途經過風景優美的山路。" 
+                data-eng_context="The main bus hub in Tung Chung. From here, you can take NLB Bus No. 23 to Ngong Ping. The bus journey takes about 101 minutes and passes through scenic mountain roads."
+                data-img="src/image/TaiO/Bus_terminal.png">
+                📍
+            </button>
+            
+            <!-- Ngong Ping Village (Orange) -->
+            <button class="map-pin" style="top: 44.3%; left: 47.6%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(30deg);" 
+                data-title="昂坪市集 Ngong Ping Village" 
+                data-chinese_context="位於纜車終點站的主題村莊。設有商店、餐廳及適合家庭的景點。" 
+                data-eng_context="A themed village at the cable car terminus. Features shops, restaurants, and family-friendly attractions."
+                data-img="">
+                📍
+            </button>
+
+            <!-- Ngong Ping Bus Terminus Public Toilet (Blue) -->
+            <button class="map-pin" style="top: 60.5%; left: 64.1%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(200deg);" 
+                data-title="昂坪巴士站公廁 Ngong Ping Bus Terminus Public Toilet" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/puclic_toliet.png">
+                📍
+            </button>
+
+            <!-- Mountains and Sea Pavilion (Green) -->
+            <button class="map-pin" style="top: 79.5%; left: 39.5%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="山海亭 Mountains and Sea Pavilion" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/MSP.jpg">
+                📍
+            </button>
+
+            <!-- Lantau Trail Section 4 (Green) -->
+            <button class="map-pin" style="top: 50.4%; left: 48.7%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(100deg);" 
+                data-title="鳳凰徑4段 Lantau Trail Section 4" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/Lantau_trail.png">
+                📍
+            </button>
+
+            <!-- Tai O Road Public Toilet (Blue) -->
+            <button class="map-pin" style="top: 71.3%; left: 14.8%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(200deg);" 
+                data-title="大澳道公廁 Tai O Road Public Toilet" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/TaiO_toliet.png">
+                📍
+            </button>
+
+            <!-- Bubble Tai O (Purple) -->
+            <button class="map-pin" style="top: 74.4%; left: 11.9%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(280deg);" 
+                data-title="泡抱大澳 Bubble Tai O" 
+                data-chinese_context="" 
+                data-eng_context=""
+                data-img="src/image/TaiO/BubbleTaiO.png">
+                📍
+            </button>
+
+            <!-- Tian Tan Buddha (Yellow) -->
+            <button class="map-pin" style="top: 62.5%; left: 57.1%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(60deg);" 
+                data-title="天壇大佛 Tian Tan Buddha" 
+                data-chinese_context="全球最高的戶外青銅坐佛，高34米。重要的佛教朝聖地。遊客需攀登268級階梯才能到達大佛腳下。從頂部可飽覽大嶼山及周邊山巒的壯麗景色。" 
+                data-eng_context="The world's largest outdoor bronze Buddha statue, standing 34 metres tall. A major Buddhist pilgrimage site. Visitors can climb 268 steps to reach the Buddha. From the top, you get amazing views of Lantau Island and the surrounding mountains.."
+                data-img="src/image/TaiO/Baddha.png">
+                📍
+            </button>
+
+            <!-- Po Lin Monastery Restaurant (Yellow) -->
+            <button class="map-pin" style="top: 48.6%; left: 68.8%; filter: drop-shadow(2px 2px 0px #3C3422) hue-rotate(60deg);" 
+                data-title="寶蓮禪寺齋堂 Po Lin Monastery Restaurant" 
+                data-chinese_context="位於大佛旁的佛教寺院。始建於1906年，是香港最著名的宗教聖地之一。遊客可在寺內的齋堂享用素食。" 
+                data-eng_context="A Buddhist monastery located next to the Big Buddha. Founded in 1906, it is one of Hong Kong's most famous religious sites. Visitors can enjoy vegetarian meals at the monastery's restaurant."
+                data-img="src/image/TaiO/PoLin.png">
+                📍
+            </button>
+        </main>
+        
+        <!-- Navigation Controls -->
+        <div class="bottom-controls">
+            <button class="nav-btn prev-btn">&lt;</button>
+            <button class="nav-btn next-btn">&gt;</button>
+            <a href="index.html?view=main" class="banner-ribbon back-btn" style="text-decoration: none;">BACK TO MAIN</a>
+        </div>
+        
+        <!-- Popup Modal -->
+        <div id="info-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="modal-title">Title</span>
+                    <div class="modal-controls">
+                        <span>_</span>
+                        <span>□</span>
+                        <span class="close-btn">×</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-chinese-context"></p>
+                    <p id="modal-eng-context"></p>
+                    <div class="modal-image-container">
+                        <img id="modal-location-img" src="" alt="Location Image" style="width: 100%; border-radius: 5px; border: 3px solid #3b6b98; display: none;">
+                    </div>
+                </div>
+                <img src="src/image/monkey.png" alt="Monkey" class="monkey-img">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

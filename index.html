@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lantau Tour Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bgm-player" loop autoplay playsinline preload="auto">
+        <source src="src/audio_bgm.wav" type="audio/wav">
+    </audio>
+    <div class="main-wrapper">
+        <!-- Scene 1: Initial Welcome Screen -->
+        <div id="welcome-screen" class="scene active">
+            <div class="cloud-overlay" style="background-image: url('src/image/Cloud.png');"></div>
+            <main class="content">
+                <h1 class="title">WELCOME TO WEST ISLAND</h1>
+                <a href="#" class="click-here">Click Here</a>
+            </main>
+        </div>
+
+        <!-- Scene 2: Cover 2 Screen -->
+        <div id="cover2-screen" class="scene hidden cover2-scene" aria-label="Cover 2"></div>
+
+        <!-- Scene 3: Main Screen -->
+        <div id="map-screen" class="scene hidden">
+            <div class="top-banner">
+                <h2 class="sub-title">This is a tour guide</h2>
+            </div>
+            
+            <div class="map-ui">
+                <button class="cloud-btn map-btn">Map</button>
+                <button class="cloud-btn suggested-mountain-btn">Suggested<br>Route</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
